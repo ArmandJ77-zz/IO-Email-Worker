@@ -1,0 +1,76 @@
+{
+  "name": "io-email-worker",
+  "version": "1.0.0",
+  "description": "Nodejs email worker configured to consume for a queue",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf lib",
+    "build": "tsc --declaration",
+    "build:watch": "tsc --w --declaration",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "npm run lint -- --fix",
+    "start": "tsc && ts-node ./dist/index.js",
+    "test": "mocha -r ts-node/register test/**/*.spec.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArmandJ77/IO-Email-Worker.git"
+  },
+  "author": "armand jordaan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArmandJ77/IO-Email-Worker/issues"
+  },
+  "homepage": "https://github.com/ArmandJ77/IO-Email-Worker#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "concurrently": "^4.1.0",
+    "dotenv": "^8.0.0",
+    "esm": "^3.2.25",
+    "husky": "^4.2.3",
+    "jsonwebtoken": "^8.5.1",
+    "lint-staged": "^10.0.8",
+    "lodash": "^4.17.15",
+    "module-alias": "^2.2.2",
+    "nodemailer": "^6.3.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/register": "^7.6.2",
+    "@types/body-parser": "^1.19.0",
+    "@types/chai": "^4.2.9",
+    "@types/concurrently": "^5.1.0",
+    "@types/esm": "^3.2.0",
+    "@types/jsonwebtoken": "^8.3.8",
+    "@types/lodash": "^4.14.149",
+    "@types/mocha": "^7.0.1",
+    "@types/nodemailer": "^6.4.0",
+    "@typescript-eslint/eslint-plugin": "^2.22.0",
+    "@typescript-eslint/parser": "^2.22.0",
+    "chai": "*",
+    "cross-env": "^7.0.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "jshint": "^2.10.2",
+    "mocha": "*",
+    "nodemon": "^1.19.1",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.2",
+    "ts-node": "^8.6.2",
+    "tslint": "^6.0.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.7.5"
+  },
+  "_moduleAliases": {
+    "@models": "lib/src/models",
+    "@enums": "lib/src/enums",
+    "@builders": "lib/src/builders",
+    "@responses": "lib/src/responses",
+    "@config": "lib/config",
+    "@handlers": "lib/src/handlers"
+  }
+}
