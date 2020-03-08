@@ -2,16 +2,7 @@
   "name": "io-email-worker",
   "version": "1.0.0",
   "description": "Nodejs email worker configured to consume for a queue",
-  "main": "index.js",
-  "scripts": {
-    "clean": "rimraf lib",
-    "build": "tsc --declaration",
-    "build:watch": "tsc --w --declaration",
-    "lint": "eslint . --ext .ts",
-    "lint:fix": "npm run lint -- --fix",
-    "start": "tsc && ts-node ./dist/index.js",
-    "test": "mocha -r ts-node/register test/**/*.spec.ts"
-  },
+  "main": "server.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ArmandJ77/IO-Email-Worker.git"
@@ -22,6 +13,16 @@
     "url": "https://github.com/ArmandJ77/IO-Email-Worker/issues"
   },
   "homepage": "https://github.com/ArmandJ77/IO-Email-Worker#readme",
+  "scripts": {
+    "start": "tsc && ts-node ./build/server.js",
+    "start:watch": "nodemon",
+    "clean": "rimraf lib",
+    "build": "tsc --declaration",
+    "build:watch": "tsc --w --declaration",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "mocha -r ts-node/register test/**/*.spec.ts"
+  },
   "dependencies": {
     "body-parser": "^1.19.0",
     "concurrently": "^4.1.0",
@@ -44,6 +45,7 @@
     "@types/chai": "^4.2.9",
     "@types/concurrently": "^5.1.0",
     "@types/esm": "^3.2.0",
+    "@types/express": "^4.17.3",
     "@types/jsonwebtoken": "^8.3.8",
     "@types/lodash": "^4.14.149",
     "@types/mocha": "^7.0.1",
@@ -55,6 +57,7 @@
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
+    "express": "^4.17.1",
     "jshint": "^2.10.2",
     "mocha": "*",
     "nodemon": "^1.19.1",
@@ -66,11 +69,11 @@
     "typescript": "^3.7.5"
   },
   "_moduleAliases": {
-    "@models": "lib/src/models",
-    "@enums": "lib/src/enums",
-    "@builders": "lib/src/builders",
-    "@responses": "lib/src/responses",
-    "@config": "lib/config",
-    "@handlers": "lib/src/handlers"
+    "@models": "build/src/models",
+    "@enums": "build/src/enums",
+    "@builders": "build/src/builders",
+    "@responses": "build/src/responses",
+    "@config": "build/config",
+    "@handlers": "build/src/handlers"
   }
 }
